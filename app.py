@@ -1,4 +1,3 @@
-# app.py – ASVAB Exam Prep by FastPrep Publishing
 import pandas as pd
 import streamlit as st
 
@@ -12,7 +11,6 @@ section = st.selectbox("📚 Choose a section", df["Section"].unique())
 question = df[df["Section"] == section].sample(1).iloc[0]
 
 st.markdown(question["Formatted Question"])
-st.markdown(question["Visual Timer"])
 
 for opt in ["Option A", "Option B", "Option C", "Option D"]:
     st.button(question[opt])
