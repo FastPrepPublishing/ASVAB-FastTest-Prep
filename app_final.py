@@ -1,8 +1,18 @@
-# app_final.py – ASVAB Exam Simulation (Stabile)
-import pandas as pd
 import streamlit as st
+import pandas as pd
 
-# Layout
+st.set_page_config(page_title="ASVAB Exam Simulation", layout="wide")
+st.title("🧠 ASVAB Master Trainer – Debug Mode")
+
+try:
+    df = pd.read_csv("asvab_exam_simulation.csv")
+    st.success("✅ CSV loaded successfully.")
+    st.write("First 5 rows:")
+    st.write(df.head())
+except Exception as e:
+    st.error("❌ Error loading CSV file.")
+    st.exception(e)
+
 st.set_page_config(page_title="ASVAB Exam Simulation", layout="wide")
 st.title("🧠 ASVAB Master Trainer – Full Exam Simulation")
 
